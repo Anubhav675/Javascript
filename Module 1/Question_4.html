@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Sorting Hat</title>
 </head>
 <body>
-<
+    <h1>Welcome to Hogwarts School of Witchcraft and Wizardry</h1>
+    <p id="school"></p>
+
+    <script>
+        const studentName = prompt("Enter your name:");
+        const number = Math.floor(Math.random() * 4);
+        let result;
+
+        if (number === 0) {
+            result = "Gryffindor";
+        } else if (number === 1) {
+            result = "Slytherin";
+        } else if (number === 2) {
+            result = "Hufflepuff";
+        } else {
+            result = "Ravenclaw";
+        }
+
+        document.getElementById("school").innerText =
+            `${studentName}, you are ${result}.`;
+    </script>
 </body>
 </html>
