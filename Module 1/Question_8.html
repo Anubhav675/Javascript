@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>This prints all the leap year in between</h1>
+    <input type="text" id="num1" placeholder="enter the starting year" />
+    <input type="text" id="num2" placeholder="enter the ending year" />
+    <button onclick="generate()">Generate</button>
+    <ul id="year"></ul>
+    <script>
+      function generate() {
+        let year1 = Number(document.getElementById("num1").value);
+        let year2 = Number(document.getElementById("num2").value);
+        const output = document.getElementById("year");
+        output.innerHTML = "";
+        for (let i = year1; i <= year2; i++) {
+          if ((i % 4 === 0 && i % 100 !== 0) || i % 400 === 0) {
+            const li = document.createElement("li");
+            li.textContent = i;
+            output.appendChild(li);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

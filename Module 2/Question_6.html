@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>assignment 6</title>
+  </head>
+  <body>
+    <h1>Dice rolls until 6</h1>
+    <button onclick="roll()">Roll the dice</button>
+    <ul id="dice"></ul>
+    <script>
+      function roll() {
+        let face = 0;
+        output = document.getElementById("dice");
+        output.innerHTML = "";
+
+        while (face !== 6) {
+          face = Math.floor(Math.random() * 6 + 1);
+          const li = document.createElement("li");
+          li.textContent = face;
+          output.appendChild(li);
+        }
+      }
+    </script>
+  </body>
+</html>

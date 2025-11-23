@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      numbers = [];
+      while (true) {
+        const num = Number(prompt("input the numbers"));
+        if (num === 0) break;
+        let duplicate = false;
+        for (let i of numbers) {
+          if (num === i) {
+            alert("this number has already been given.");
+            duplicate = true;
+            break;
+          }
+        }
+        if (!duplicate) {
+          numbers.push(num);
+        } else {
+          break;
+        }
+      }
+      for (let i of numbers) {
+        console.log(i);
+      }
+    </script>
+  </body>
+</html>

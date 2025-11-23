@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const noOfCandidates = Number(prompt("enter the number of candidates: "));
+      let candidates = [];
+      if (noOfCandidates < 2) {
+        alert("there should be at least 2 candidates ");
+      } else {
+        for (let i = 0; i < noOfCandidates; i++) {
+          let name = prompt(`enter the name of ${i + 1} candidates`);
+          let votes = 0;
+          candidates.push({ name, votes });
+        }
+      }
+      const noOfVoters = Number(prompt("enter the number of voters"));
+
+      for (let i = 1; i <= noOfVoters; i++) {
+        let voteFor = prompt(`Voter ${i}: You vote for ? `);
+        if (voteFor !== "") {
+          for (j = 0; j < candidates.length; j++) {
+            if (voteFor == candidates[j].name) {
+              candidates[j].votes += 1;
+            }
+          }
+        } else {
+          alert("must vote for someone");
+        }
+      }
+
+      candidates.sort((a, b) => {
+        return b.votes - a.votes;
+      });
+
+      console.log(
+        `The winner is ${candidates[0].name} with ${candidates[0].votes} votes`
+      );
+      console.log(candidates);
+    </script>
+  </body>
+</html>

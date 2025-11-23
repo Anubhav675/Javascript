@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Concatenating</h1>
+    <button onclick="concat(names)">concatenate</button>
+    <h2 id="concat"></h2>
+
+    <script>
+      const names = ["juha", "ava", "timo", "ulla", "sakari"];
+      result = "";
+      function concat(names) {
+        for (let name of names) {
+          result = result + name;
+        }
+        const output = document.getElementById("concat");
+        output.innerText = result;
+      }
+
+    </script>
+  </body>
+</html>

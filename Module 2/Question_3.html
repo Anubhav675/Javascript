@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Names of 6 dogs in reverse order</h1>
+    <ol id="dogs"></ol>
+    <script>
+      let listOfDogs = [];
+      for (i = 0; i <= 5; i++) {
+        name = prompt(`Enter the name of ${i} dogs`);
+        listOfDogs.push(name);
+      }
+      listOfDogs.sort();
+      listOfDogs.reverse();
+      let output = document.getElementById("dogs");
+      output.innerHTML = "";
+      for (i = 0; i <= 5; i++) {
+        const li = document.createElement("li");
+        li.textContent = listOfDogs[i];
+        output.appendChild(li);
+      }
+    </script>
+  </body>
+</html>

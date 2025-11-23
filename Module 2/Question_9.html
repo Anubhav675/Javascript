@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>even in an array</h1>
+
+    <button onclick="evenArray(numbers)">Results</button>
+    <script>
+      const numbers = [1, 55, 7, 88, 54, 72, 77, 17, 10, 87, 11];
+
+      function evenArray(numbers) {
+        let even = [];
+        for (let num of numbers) {
+          if (num % 2 === 0) {
+            even.push(num);
+          }
+        }
+
+        console.log(`the original array ${numbers}`);
+        console.log(`the even array ${even}`);
+      }
+    </script>
+  </body>
+</html>

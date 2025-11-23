@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Display number of participants</h1>
+
+    <ul id="names"></ul>
+    <script>
+      noOfPersons = [];
+      num = Number(prompt("enter the number of participants"));
+      for (i = 1; i <= num; i++) {
+        name = prompt(`enter the name of ${i} person`);
+        noOfPersons.push(name);
+      }
+      noOfPersons.sort();
+      output = document.getElementById("names");
+      output.innerHTML = "";
+
+      for (i = 0; i <= noOfPersons.length; i++) {
+        const li = document.createElement("li");
+        li.textContent = noOfPersons[i];
+        output.appendChild(li);
+      }
+    </script>
+  </body>
+</html>
